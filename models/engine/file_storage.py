@@ -1,6 +1,5 @@
 import json
 import os
-from ..base_model import BaseModel
 
 
 class FileStorage:
