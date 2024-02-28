@@ -14,6 +14,9 @@ class HBNBCommand(cmd.Cmd):
     def do_help(self, arg):
         return super().do_help(arg)
 
+    def emptyline(self):
+        """Do nothing"""
+        pass
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
