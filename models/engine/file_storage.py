@@ -17,12 +17,12 @@ class FileStorage:
         with open(FileStorage.__file_path, 'w') as f:
             serialized_objects = {}
 
-        for key, value in FileStorage.__objects.items():
-            dict_object = value.to_dict()
+            for key, value in FileStorage.__objects.items():
+                dict_object = value.to_dict()
 
-            serialized_objects[key] = dict_object
+                serialized_objects[key] = dict_object
 
-        json.dump(serialized_objects, f)
+            json.dump(serialized_objects, f)
 
     def reload(self):
         if os.path.exists(FileStorage.__file_path):
