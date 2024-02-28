@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This is the consolation module. Provides a command line interface to interact with the program.
 """
