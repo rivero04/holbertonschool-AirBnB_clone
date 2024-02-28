@@ -1,3 +1,7 @@
+"""
+This is the consolation module. Provides a command line interface to interact with the program.
+"""
+
 import cmd
 
 class HBNBCommand(cmd.Cmd):
