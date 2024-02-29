@@ -2,7 +2,8 @@
 """ User class"""
 
 from base_model import BaseModel
-def user(BaseModel):
+class User(BaseModel):
+    """Represent a User."""
     email = ""
     password = ""
     first_name = ""

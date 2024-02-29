@@ -27,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """An empty line + ENTER shouldn’t execute anything"""
         pass
-    
+
     def do_create(self, arg):
         """Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id"""
         if not arg:
@@ -37,7 +37,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             newbase = BaseModel()
             print(newbase.id)
-    
+
     def do_show(self, arg):
         """Prints the string representation of an instance based on the class name and id"""
         args = arg.split()
@@ -70,11 +70,11 @@ class HBNBCommand(cmd.Cmd):
             else:
                 del storage.all()[key]
                 storage.save()
-            
+
     def do_all(self, arg):
         for obj in storage.all().values():
             print(obj)
-    
+
     def do_update(self, arg):
         args = arg.split()
         if not arg:
@@ -91,8 +91,12 @@ class HBNBCommand(cmd.Cmd):
             key = args[0] + "." + args[1]
             if key not in storage.all():
                 print("** no instance found **")
-            #else:
-                #completar con codigo  para actualizar
+            else:
+                instance = storage.all()[key]
+                attr_name = args[2]
+                attr_value = args[3]
+                setattr(instance, attr_name, attr_value)
+                instance.save()
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-    
