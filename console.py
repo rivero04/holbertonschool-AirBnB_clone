@@ -4,13 +4,25 @@ This is the consolation module. Provides a command line interface to interact wi
 """
 
 import cmd
-from models.base_model import BaseModel
 from models import storage
+from models.base_model import BaseModel
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand class"""
     prompt = '(hbnb) '
-    classes = {"BaseModel": BaseModel}
+    classes = {
+        "BaseModel": BaseModel,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Place": Place,
+        "Review": Review,
+    }
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
