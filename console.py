@@ -52,6 +52,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             newbase = BaseModel()
             print(newbase.id)
+            storage.save()
 
     def do_show(self, arg):
         """Prints the string representation of
