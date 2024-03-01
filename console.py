@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This is the consolation module. Provides a command line interface to interact with the program.
+This is the consolation module.
+Provides a command line interface to interact with the program.
 """
 
 import cmd
@@ -11,6 +12,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
+
 
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand class"""
@@ -41,22 +43,24 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id"""
+        """Creates a new instance of BaseModel,
+        saves it (to the JSON file) and prints the id"""
         if not arg:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif arg not in self.classes:
-            print ("* class doesn't exist **")
+            print("* class doesn't exist **")
         else:
             newbase = BaseModel()
             print(newbase.id)
 
     def do_show(self, arg):
-        """Prints the string representation of an instance based on the class name and id"""
+        """Prints the string representation of
+        an instance based on the class name and id"""
         args = arg.split()
         if not arg:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif args[0] not in self.classes:
-            print ("* class doesn't exist **")
+            print("* class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
         else:
@@ -70,9 +74,9 @@ class HBNBCommand(cmd.Cmd):
         """Delete instance based on the class name and id"""
         args = arg.split()
         if not arg:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif args[0] not in self.classes:
-            print ("* class doesn't exist **")
+            print("* class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
         else:
@@ -90,9 +94,9 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         args = arg.split()
         if not arg:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif args[0] not in self.classes:
-            print ("* class doesn't exist **")
+            print("* class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
         elif len(args) < 3:
@@ -109,6 +113,7 @@ class HBNBCommand(cmd.Cmd):
                 attr_value = args[3]
                 setattr(instance, attr_name, attr_value)
                 instance.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
