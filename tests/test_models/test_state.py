@@ -4,7 +4,7 @@ import unittest
 from models import FileStorage
 
 
-class TestAmenity(unittest.TestCase):
+class TestState(unittest.TestCase):
     def testname(self):
         instance = State()
         instance.name = "Orlando"
