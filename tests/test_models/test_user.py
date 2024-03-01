@@ -4,7 +4,7 @@ import unittest
 from models import FileStorage
 
 
-class TestState(unittest.TestCase):
+class TestUser(unittest.TestCase):
     def testname(self):
         instance = User()
         instance.first_name = "German"
