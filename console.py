@@ -49,10 +49,11 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif arg not in self.classes:
             print("* class doesn't exist **")
-        else:
-            newbase = BaseModel()
-            print(newbase.id)
-            storage.save()
+        for key, value in self.classes.items():
+            if arg == key:
+                newbase = value()
+                print(newbase.id)
+                storage.save()
 
     def do_show(self, arg):
         """Prints the string representation of
