@@ -50,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
         elif arg not in self.classes:
-            print("* class doesn't exist **")
+            print("** class doesn't exist **")
         for key, value in self.classes.items():
             if arg == key:
                 newbase = value()
@@ -64,7 +64,7 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
         elif args[0] not in self.classes:
-            print("* class doesn't exist **")
+            print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
         else:
@@ -80,7 +80,7 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
         elif args[0] not in self.classes:
-            print("* class doesn't exist **")
+            print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
         else:
@@ -100,7 +100,7 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
         elif args[0] not in self.classes:
-            print("* class doesn't exist **")
+            print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
         elif len(args) < 3:
