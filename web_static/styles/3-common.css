@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+    
+.container {
+    width: 100%;
+    max-width: 1000px;
+    flex: 1 0 auto;
+}
